@@ -15,7 +15,7 @@ function creatCombination() {
             combination[i] = result
         }
     }
-    return console.log(combination)
+    return combination
 }
 
 
@@ -46,5 +46,23 @@ function printCombination() {
             return alert('Отменено')
         }
     }
-    return console.log(selectionCombination)
+    return selectionCombination
 }
+
+
+//Недоделанная функция
+let combination = creatCombination()
+
+function checkCombination () {
+    console.log(combination)
+    let userCombination = printCombination()
+    console.log(userCombination)
+    
+    if (combination[0] === userCombination[0]) {
+        return alert('Вы открыли сейф!')
+    }
+    else if (userCombination[0] === 0) {
+        return
+    }
+}
+checkCombination()
