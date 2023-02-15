@@ -1,9 +1,11 @@
+'use strict';
+
 function creatCombination() {
     const combination = ['', '', '']
     let result = 0
 
     for (let i = 0; i < combination.length; i++) {
-        result = Math.floor(Math.random() * 10)
+        result = (Math.floor(Math.random() * 10))
 
         if (result === 0) {
             combination[i] = result + 1
@@ -13,16 +15,14 @@ function creatCombination() {
             combination[i] = result
         }
     }
-    return combination
+    return console.log(combination)
 }
-let combination = creatCombination()
-console.log(combination)
 
 
 
-function printCombination(selectionCombination) {
+function printCombination() {
     let orderNumber = ''
-    selectionCombination = ['', '', '']
+    const selectionCombination = ['', '', '']
     for (let j = 0; j < selectionCombination.length; j++) {
         if (j === 0) {
             orderNumber = 'первое'
@@ -36,17 +36,15 @@ function printCombination(selectionCombination) {
             orderNumber = 'третье'
         }
 
-        selectionCombination[j] = prompt(`Введите ${orderNumber} однозначное число`)
-        if (selectionCombination[j] > 9 || selectionCombination[j] === '0') {
+        selectionCombination[j] = +prompt(`Введите ${orderNumber} однозначное число`)
+        if (selectionCombination[j] > 9) {
             alert('Вы ввели не однозначное число!')
             j = j - 1
         }
 
-        else if (selectionCombination[j] === null) {
+        else if (selectionCombination[j] === 0) {
             return alert('Отменено')
         }
     }
-    return selectionCombination
+    return console.log(selectionCombination)
 }
-let selectionCombination = printCombination()
-console.log(selectionCombination)
