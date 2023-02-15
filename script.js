@@ -1,20 +1,3 @@
-// const combination = ['', '', '']
-// const selectionCombination = ['', '', '']
-// let checkCode = false
-
-// for (let i = 0; i < combination.length; i++) {
-//     result = Math.floor(Math.random() * 10)
-    
-//     if (result === 0) {
-//         combination[i] = result + 1
-//     } 
-
-//     else {
-//         combination[i] = result
-//     }
-// }
-
-
 function creatCombination() {
     const combination = ['', '', '']
     let result = 0
@@ -32,20 +15,38 @@ function creatCombination() {
     }
     return combination
 }
+let combination = creatCombination()
+console.log(combination)
 
-console.log(creatCombination())
 
 
 function printCombination(selectionCombination) {
-
+    let orderNumber = ''
     selectionCombination = ['', '', '']
     for (let j = 0; j < selectionCombination.length; j++) {
-        selectionCombination[j] = prompt('Введите число')
+        if (j === 0) {
+            orderNumber = 'первое'
+        }
+
+        else if (j === 1) {
+            orderNumber = 'второе'
+        }
+
+        else {
+            orderNumber = 'третье'
+        }
+
+        selectionCombination[j] = prompt(`Введите ${orderNumber} однозначное число`)
+        if (selectionCombination[j] > 9 || selectionCombination[j] === '0') {
+            alert('Вы ввели не однозначное число!')
+            j = j - 1
+        }
+
+        else if (selectionCombination[j] === null) {
+            return alert('Отменено')
+        }
     }
-
-    
-
     return selectionCombination
 }
-
-printCombination()
+let selectionCombination = printCombination()
+console.log(selectionCombination)
