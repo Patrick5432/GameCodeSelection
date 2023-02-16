@@ -42,7 +42,7 @@ function printCombination() {
         }
 
         selectionCombination[j] = prompt(`Введите ${orderNumber} число от 0 до 9`)
-        if (selectionCombination[j] > 9) {
+        if (selectionCombination[j] > 9 || selectionCombination[j] < 0) {
             alert('Вы вышли за предел!')
             j--
         }
