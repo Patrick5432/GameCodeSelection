@@ -52,6 +52,11 @@ function printCombination() {
             j--
         }
 
+        else if (isNaN(+selectionCombination[j])) {
+            alert('Могут стоять только числа!')
+            j--
+        }
+
         else if (selectionCombination[j] === null) {
             return alert('Отменено')
         }
