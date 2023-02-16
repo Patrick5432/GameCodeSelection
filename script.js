@@ -42,7 +42,7 @@ function printCombination() {
         }
 
         selectionCombination[j] = prompt(`Введите ${orderNumber} число от 0 до 9`)
-        if (selectionCombination[j] > 9 || selectionCombination[j] < 0) {
+        if (selectionCombination[j] > 9 || selectionCombination[j] < 0 || selectionCombination[j] === '-0') {
             alert('Вы вышли за предел!')
             j--
         }
@@ -52,7 +52,7 @@ function printCombination() {
             j--
         }
 
-        else if (isNaN(+selectionCombination[j]) || selectionCombination[j].slice(0, 1) <= 0) {
+        else if (isNaN(+selectionCombination[j]) || selectionCombination[j].slice(0, 1) < 0) {
             alert('Могут стоять только числа!')
             j--
         }
