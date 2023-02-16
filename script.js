@@ -52,7 +52,7 @@ function printCombination() {
             j--
         }
 
-        else if (isNaN(+selectionCombination[j]) || selectionCombination[j].length === 2) {
+        else if (isNaN(+selectionCombination[j]) || selectionCombination[j].slice(0, 1) <= 0) {
             alert('Могут стоять только числа!')
             j--
         }
